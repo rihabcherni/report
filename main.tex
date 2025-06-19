@@ -1,0 +1,197 @@
+\documentclass[12pt,a4paper,oneside]{report}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{changepage}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{setspace}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{tikz, xcolor, lipsum, colortbl}
+\usepackage{amssymb}
+\usepackage{multirow} 
+\makeatletter
+\mdfsetup{skipabove=\topskip,skipbelow=\topskip}
+\tikzset{titreorange/.style =
+    {draw=orange, line width=1.5pt, fill=white,
+    rectangle, rounded corners, right,minimum height=2em}}
+\newcommand{\titreencadre}{Titre}
+\makeatletter
+\mdfdefinestyle{encadresanstitrestyle}{
+    linewidth=1.5pt,roundcorner=5pt,linecolor=orange,
+    apptotikzsetting={\tikzset{mdfbackground/.append style ={
+        fill=yellow!20}}},
+    }
+\newenvironment{encadresanstitre}{
+    \begin{mdframed}[style=encadresanstitrestyle]
+    }{\end{mdframed}}
+\makeatother
+\usepackage{pifont}
+\usepackage[utf8]{inputenc}
+\usepackage[arabic,main=french]{babel}
+\usepackage[LFE,LAE,T1]{fontenc}
+\renewcommand{\baselinestretch}{1.5}
+\usepackage{appendix}
+\usepackage{wrapfig}
+\usepackage[backend=biber,style=ieee,citecounter=true]{biblatex}
+\addbibresource{biblio.bib}
+\setcounter{secnumdepth}{4}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\usepackage[cyr]{aeguill}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{xspace}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{url}
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+\usepackage[top=2cm, bottom=1.9cm, left=1.9cm, right=1.9cm]{geometry}
+\usepackage{lettrine}
+\usepackage{graphicx}
+\usepackage{times}
+\usepackage{geometry}
+\usepackage[most]{tcolorbox}
+\usepackage{pifont}
+\usepackage{float} 
+\usepackage{hyperref}
+\usepackage{enumitem}
+\setlist[enumerate,1]{label=\arabic*.}
+\usepackage{textcomp}
+\usepackage{array, makecell}
+\usepackage{supertabular}
+\usepackage{longtable}
+\usepackage{tabularray}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancypagestyle{fancy}{
+    \fancyhf{} 
+    \fancyhead[L]{\nouppercase{\leftmark}} 
+    % \fancyhead[R]{\nouppercase{\rightmark}}
+    \fancyfoot[C]{\thepage}
+    \renewcommand{\headrulewidth}{0.3pt}
+}
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+} 
+\usepackage[titles]{tocloft}
+\usepackage{parskip}
+\newlength\mylength
+\renewcommand\cftchappresnum{\chaptername~}
+\renewcommand\cftchapaftersnum{:}
+\settowidth\mylength{\cftchappresnum\cftchapaftersnum\quad}
+\addtolength\cftchapnumwidth{\mylength}
+\usepackage{lmodern}
+\usepackage[]{lipsum}
+\newcommand\gauchedroite[2]{\noindent{}#1\hfill#2}
+\usepackage[document]{ragged2e}
+\justifying
+\usepackage{fix-cm}
+\usepackage{titlesec}
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+\titleformat{\section}{\normalfont\fontsize{16}{15}\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\normalfont\fontsize{14}{15}\bfseries}{\thesubsection.}{0.5em}{}
+\titleformat{\subsubsection}{\normalfont\fontsize{12}{15}\bfseries}{\thesubsubsection.}{0.5em}{}
+\titleformat{\chapter}{\normalfont\fontsize{16}{15}\bfseries}{\thechapter.}{0.5em}{}
+
+\titlespacing*{\section}{0pt}{8pt}{8pt} 
+\titlespacing*{\subsection}{4pt}{6pt}{6pt} 
+\titlespacing*{\subsubsection}{6pt}{5pt}{5pt} 
+
+\renewcommand{\cftsecaftersnum}{.}
+\renewcommand{\cftsubsecaftersnum}{.}
+\renewcommand{\cftsubsubsecaftersnum}{.}
+\usepackage[Lenny]{fncychap}
+\ChTitleVar{\Huge\bfseries}
+\ChNameVar{\large\bfseries}
+\ChNumVar{\fontsize{60}{62}\bfseries}
+\ChTitleVar{\fontsize{20}{20}\bfseries}
+
+\makeatletter
+\def\@makechapterhead#1{%
+  \vspace*{-20pt}
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+      \if@mainmatter
+        \DOCH
+      \fi
+    \fi
+    \interlinepenalty\@M
+    \if@mainmatter
+      \DOTI{#1}%
+    \else%
+      \DOTIS{#1}%
+    \fi
+  }}
+\makeatother
+\usepackage{xhfill}
+\usepackage{fdsymbol}
+\usepackage{acronym} 
+\usepackage{etoolbox}
+\makeatletter
+\let\oldcite\cite
+\pretocmd{\listoffigures}{\def\cite{\ignorespaces\@gobble}}{}{}
+\apptocmd{\listoffigures}{\let\cite\oldcite}{}{}
+\pretocmd{\listoftables}{\def\cite{\ignorespaces\@gobble}}{}{}
+\apptocmd{\listoftables}{\let\cite\oldcite}{}{}
+\pretocmd{\tableofcontents}{\def\cite{\ignorespaces\@gobble}}{}{}
+\apptocmd{\tableofcontents}{\let\cite\oldcite}{}{}
+\makeatother
+\begin{document}
+    \pagenumbering{roman} 
+    \pagestyle{plain}
+        \input{pages/page-de-garde/page-de-garde} \newpage
+        \input{pages/Dedicaces} \newpage
+        \input{pages/Remerciement} \newpage
+    \pagestyle{fancy}
+        \addtocontents{toc}{\vspace{-0pt}}
+        \begin{spacing}{1.1}
+            \tableofcontents            
+            \addtocontents{lof}{\vspace{-60pt}}
+            \listoffigures
+            \addtocontents{lot}{\vspace{-60pt}}
+            \listoftables  \newpage
+        \end{spacing}
+        \thispagestyle{empty}
+        \pagenumbering{arabic} 
+    \setcounter{page}{1}
+    \pagestyle{plain}
+        \addtocontents{toc}{\vspace{-60pt}}
+        \input{pages/introduction} \newpage
+    \pagestyle{fancy}
+        \input{chapitres/ch1/ch1} \newpage
+        \input{chapitres/ch2/ch2} \newpage
+        \input{chapitres/ch3Sp1/ch3} \newpage
+        \input{chapitres/ch4Sp2/ch4} \newpage
+    \pagestyle{plain}
+        \input{pages/conclusionGen.tex} \newpage
+        
+        \appendix
+       \begin{center} {\huge\bfseries Liste des acronymes}\end{center}
+        \vspace{0.4cm}
+        \input{acro_list}
+        \newpage
+        \pagenumbering{gobble}
+        
+        \counterwithin*{figure}{part}
+        \stepcounter{part}
+        \renewcommand{\thefigure}{A.\arabic{figure}}
+        \input{Annexe/Annexe1}
+        \renewcommand{\thefigure}{B.\arabic{figure}}
+        \input{Annexe/Annexe2}
+        \renewcommand{\thefigure}{C.\arabic{figure}}
+        \input{Annexe/Annexe3}
+        \renewcommand{\thefigure}{D.\arabic{figure}}
+        \input{Annexe/Annexe4}
+        \renewcommand{\thefigure}{E.\arabic{figure}}
+        \input{Annexe/Annexe5}
+        \printbibliography[title=\begin{center}\vspace*{-3cm} Bibliographie \vspace*{-2.5cm} \end{center}]
+        \addcontentsline{toc}{chapter}{Bibliographie} \newpage
+        \appendix
+        \clearpage
+    \thispagestyle{empty}
+    \input{pages/resume}
+\end{document}

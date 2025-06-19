@@ -1,0 +1,95 @@
+\chapter*{
+    \begin{center}
+        \vspace{-2.5cm}
+        {\Large Annexe D: Automatisation d'analyse SEO}
+    \end{center}
+}
+\addcontentsline{toc}{chapter}{Annexe D:  Automatisation d'analyse SEO}
+\vspace{-2cm}
+\begin{justify}
+\vspace{-0.5cm}
+{\fontsize{14}{17}\selectfont \textbf{Introduction}}\\
+Dans le cadre de notre projet dédié à l’audit de sécurité et au SEO, un module a été conçu pour effectuer une analyse technique approfondie d’un site web, à des fins d’optimisation du référencement et de détection des technologies utilisées côté client et serveur.
+
+{\fontsize{14}{17}\selectfont \textbf{Objectifs}}
+\begin{itemize}[label=$\bullet$]
+    \item Évaluer la qualité SEO d’une page web à travers plusieurs critères (balises, performances, accessibilité, etc.).
+    \item Identifier les technologies \textit{backend} (PHP, Node.js, Django...) et les CMS (WordPress, Joomla...), ainsi que les frameworks \textit{frontend} (React, Angular, Bootstrap...).
+    \item Extraire des mots-clés et expressions courantes pour enrichir l’analyse sémantique.
+    \item Générer une capture d’écran de la page analysée.
+    \item Fournir un rapport synthétique et un score global SEO.
+\end{itemize}
+\vspace{0.3cm}
+{\fontsize{14}{17}\selectfont \textbf{Principales technologies et bibliothèques utilisées}}
+\begin{itemize}[label=$\bullet$]
+    \item \textbf{FastAPI}: pour exposer des \textit{endpoints} REST.
+    \item \textbf{Selenium + Chrome Headless}: pour capturer des captures d’écran.
+    \item \textbf{BeautifulSoup}: pour le \textit{parsing} HTML.
+    \item \textbf{NLTK (Natural Language Toolkit)}: pour le traitement du langage naturel (extraction de mots-clés, \textit{stopwords}, etc.).
+    \item \textbf{Requests}: pour la récupération des pages.
+    \item \textbf{Jinja2}: pour la génération de rapports HTML.
+\end{itemize}
+\vspace{0.3cm}
+{\fontsize{14}{17}\selectfont \textbf{Fonctionnalités principales}}
+\begin{enumerate}[label=\alph*)]
+    \item  \textbf{Analyse SEO de base}\\
+        La fonction \texttt{analyze\_page(url)} effectue les analyses suivantes:
+        \begin{itemize}[label=$\bullet$]
+            \item Temps de chargement (en millisecondes).
+            \item Taille HTML (en ko).
+            \item Présence des balises essentielles:
+            \begin{itemize}[label=$\bullet$]
+                \item \texttt{<title>}: pénalité si absente.
+                \item \texttt{<meta name="description">}: pénalité si absente.
+                \item Balises \texttt{<h1>} à \texttt{<h6>}: pénalité si certaines manquent.
+                \item Balise \texttt{<link rel="canonical">}: pour la gestion du contenu dupliqué.
+                \item Attributs \texttt{alt} des images: vérifie leur complétude.
+                \item Balise \texttt{<meta name="robots">}: optionnelle, mais recommandée.
+                \item Présence de \texttt{<link rel="icon">} (favicon).
+            \end{itemize}
+        \end{itemize}
+        
+        Un score SEO est ensuite calculé sur 100, accompagné d’une notation qualitative (\texttt{A+}, \texttt{B}, \texttt{C}, etc.).
+        
+    \item \textbf{Détection des technologies serveur et client}\\
+        La fonction \texttt{get\_server\_info(url)} effectue les opérations suivantes:
+        \begin{itemize}[label=$\bullet$]
+            \item Résolution DNS pour obtenir l’adresse IP du domaine.
+            \item Envoi d’une requête HTTP de type \texttt{HEAD} pour récupérer les en-têtes.
+            \item Analyse des champs \texttt{Server}, \texttt{X-Powered-By}, \texttt{Set-Cookie} pour déduire les technologies backend (PHP, Django, Laravel, etc.).
+            \item Recherche de signatures CMS: WordPress, Joomla, Drupal, etc.
+            \item Inspection du code HTML pour identifier les frameworks JS et CSS (React, Angular, Vue.js, Tailwind CSS...).
+            \item Tentative d’identification du système d’exploitation serveur (Linux, Windows, Unix...).
+        \end{itemize}
+    \item \textbf{Capture d’écran de la page}\\
+        La fonction \texttt{capture\_screenshot(url)} utilise \textbf{Selenium} avec Chrome en mode \textit{headless} pour visiter l’URL et capturer une image encodée en base64. Cela permet d’obtenir un aperçu visuel du rendu de la page, utile pour les rapports et vérifications manuelles.
+    \item \textbf{Extraction de mots-clés et expressions}\\
+        Grâce à \textbf{NLTK}, deux fonctions permettent une analyse sémantique:
+        \begin{itemize}[label=$\bullet$]
+            \item \texttt{extract\_keywords\_from\_text(text)}: extrait les mots les plus fréquents.
+            \item \texttt{extract\_phrases\_from\_text(text, n=2)}: génère les \textit{n-grammes} (bigrammes par défaut) les plus représentatifs.
+        \end{itemize}
+        Ces analyses contribuent à identifier la thématique dominante de la page et à proposer des axes d’optimisation.
+    \item \textbf{Gestion des liens internes et externes}\\
+        La fonction d’analyse des liens permet d’identifier:
+        \begin{itemize}[label=$\bullet$]
+            \item Les liens internes (même domaine): utiles pour analyser le maillage interne.
+            \item Les liens externes: indicateurs de dépendances vers des ressources tierces (CDN, bibliothèques, etc.).
+        \end{itemize}
+\end{enumerate}
+
+\vspace{0.3cm}
+{\fontsize{14}{17}\selectfont \textbf{Exemple de rapport généré}}\\
+À l’issue de l’analyse, un rapport est généré comprenant:
+\begin{itemize}[label=$\bullet$]
+    \item Détails techniques: titre, description, entêtes \texttt{<h1>} à \texttt{<h6>}, taille HTML, temps de chargement.
+    \item Statistiques: nombre de liens internes/externes, nombre d’images sans attribut \texttt{alt}.
+    \item Technologies détectées: \textit{backend}, \textit{frontend}, CMS, système d’exploitation, type de serveur.
+    \item Capture d’écran encodée (base64).
+    \item Score SEO final avec une liste des bonnes/mauvaises pratiques identifiées.
+\end{itemize}
+
+\vspace{0.3cm}
+{\fontsize{14}{17}\selectfont \textbf{Conclusion}}\\
+Ce module d’analyse SEO et de détection technologique permet d’automatiser efficacement l’audit technique d’un site web. Il constitue un outil pertinent à la fois pour les développeurs, les spécialistes SEO et les pentesters, en fournissant une vue d’ensemble complète de l’état technique et du positionnement d’une page web.
+\end{justify}

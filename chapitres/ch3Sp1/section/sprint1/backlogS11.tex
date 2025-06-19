@@ -1,0 +1,174 @@
+Cette section présente le backlog du sprint 1.1, comme illustré dans le tableau \ref{tab:backlogS11}.
+\begin{landscape}
+    \renewcommand{\arraystretch}{1.37}
+    \begin{spacing}{0.94}
+        \begin{longtable}{|p{0.7cm}|p{2.4cm}|p{6cm}|p{1cm}|p{7.2cm}|p{0.2cm}|p{0.2cm}|p{2cm}|}
+            \caption{Backlog du sprint 1.1} \label{tab:backlogS11} \\\hline
+            \rowcolor{gray!20}
+            \textbf{\small ID US} & 
+            \multicolumn{1}{c|}{\textbf{\small User Story}} & 
+            \multicolumn{1}{c|}{\textbf{\small Description}} & 
+            \textbf{\small ID tâche}& 
+            \multicolumn{1}{c|}{\textbf{\small Tâches}} & 
+            \multicolumn{1}{c|}{\textbf{\small Priorité}} & 
+            \multicolumn{1}{c|}{\textbf{\small Risques}} & 
+            \textbf{\small Estimation (Jours)}\\\hline
+            % ----------- INITIALISATION ------------------
+            \hline  
+            \rowcolor{blue!20}
+			\multicolumn{8}{|c|}{\textbf{EPIC 1: Initialisation du projet}} \\\hline
+            1.1 & Installation de l’environnement de travail 
+                  & En tant que développeur, je dois installer les outils nécessaires pour travailler. & 1.1.A \newline\vspace{0.5cm} 1.1.B
+            & - Installer Python, VSCode, Docker, Git, npm, Angular...\newline
+            - Configurer l'environnement. & Élevée & Basse & 1 \\\hline
+            1.2 & Formation Scrum. 
+                  & En tant que développeur, je dois être formé à la méthodologie Scrum afin d’organiser le travail. 
+              & 1.2.A & 
+                - Participer à une session de formation SFC de SCRUMstudy. et passer un test pour obtenir la certification.\footnote{Voir annexe B: Figures \ref{fig:ProgressionCours} et \ref{fig:CertifSRC}}
+        & Basse & Basse & 2 \\
+            \hline
+        1.3 & Formation aux tests de pénétration. 
+            & En tant que développeur, je dois être formé aux principes du pentesting pour comprendre les besoins de sécurité. 
+            & 1.3.A \newline1.3.B 
+            & 
+            - Étudier les techniques de pentesting. \newline
+            - Trouver les principaux outils de base de pentesting Web et les vulnérabilités les plus courantes.
+            & Élevée & Basse & 3  \\
+            \hline
+            1.4 & Formation Selenium. 
+                  & En tant que développeur, je dois être formé à l’automatisation avec Selenium pour automatiser les tests fonctionnels. 
+                & 1.4.A \newline1.4.B \newline 1.4.C 
+                & 
+                - Suivre une formation Selenium. \newline
+                - Installer et configurer Selenium. \newline
+                - Comprendre les bases de la manipulation des éléments Web. 
+                & Élevée & Basse & 3 \\\hline
+            1.5 & Analyse de la solution existante. 
+                  & En tant que développeur, je dois analyser la solution existante pour identifier les fonctionnalités et les limites.
+                  & 1.5.A \newline\vspace{0.5cm} 1.5.B 
+                & 
+                - Analyser la solution existante et identifier ses limites.
+                \newline
+                - Formaliser les besoins utilisateurs en spécifications fonctionnelles.& Élevée & Moyenne & 3\\
+            \hline
+            1.6 & Formation RabbitMQ. 
+                & En tant que développeur, je dois suivre une formation sur RabbitMQ afin de comprendre le fonctionnement de la communication asynchrone entre services. 
+                & 1.6.A \newline\vspace{0.9cm} 1.6.B 
+                & 
+                - Étudier les concepts de base de RabbitMQ (file d’attente, échange, routage). \newline
+                - Installer RabbitMQ en local et tester la communication entre deux services via des files de messages.
+                & Élevée & Moyenne & 3 \\
+            \hline
+            % ----------- CONSULTATION PAGE D’ACCUEIL ------------------
+            \hline  
+            \rowcolor{blue!20}
+            \multicolumn{8}{|c|}{\textbf{EPIC 2: Consultation de la page d’accueil}} \\\hline
+            2.1 & Accéder à la page d’accueil 
+            & En tant que visiteur, je souhaite accéder à la page d’accueil sans avoir besoin de créer un compte. 
+            & 2.1.A 
+            &
+            - Configurer l’accès libre à la page d’accueil depuis l’URL principale. 
+            & Moyenne & Basse & 1/2 \\ \hline
+            
+            2.2 & Parcourir les sections de la page d’accueil 
+            & En tant que visiteur, je souhaite consulter les sections publiques (FAQ, guide utilisateur, services, équipe, tarification, etc.) pour m’informer. 
+            & 2.2.A \newline\vspace{0.5cm}2.2.B 
+            &
+            - Développer les sections publiques avec leur contenu respectif. \newline
+            - Intégrer les textes descriptifs, images et icônes explicatives. 
+            & Moyenne & Moyenne & 4 \\ \hline
+            
+            2.3 & Soumettre une demande de contact
+            & En tant que visiteur, je souhaite envoyer un message via un formulaire pour poser une question ou obtenir de l’aide. 
+            & 2.3.A 
+            &
+            - Implémenter un formulaire de contact avec champs (nom, e-mail, message) et envoi vers l’administrateur. 
+            & Moyenne & Moyenne & 1/2 \\ \hline
+            
+            % ----------- AUTHENTIFICATION ------------------
+            \hline  
+            \rowcolor{blue!20}
+			\multicolumn{8}{|c|}{\textbf{EPIC 3: Authentification et gestion du profil }} \\\hline
+            3.1 & S'inscrire 
+            & En tant que visiteur, je dois créer un compte afin d'accéder à l'application. 
+            & 3.1.A
+            &
+            - Implémenter un formulaire d'inscription avec validation et gestion des tokens pour sécuriser les accès. 
+            & Moyenne & Moyenne & 1 \\ \hline
+            3.2 & Vérifier l’adresse e-mail après l’inscription. 
+                & En tant que visiteur, je dois recevoir un lien de vérification afin de valider mon compte et sécuriser l'accès. 
+                & 3.2.A \newline\vspace{0.5cm} 3.2.B 
+                &
+                - Générer un lien de vérification unique après l'inscription. \newline
+                - Implémenter un service pour envoyer l'email de vérification. 
+                & Moyenne & Moyenne & 1/2 \\ \hline
+            3.3 & S’authentifier
+                & En tant qu’un utilisateur, je veux pouvoir me connecter pour gérer mon accès. 
+                & 3.3.A&
+                - Mettre en place une page de connexion avec un formulaire d’authentification et validation des identifiants.
+                & Moyenne & Basse & 1/2 \\ \hline
+            3.4 & Réinitialiser le mot de passe en cas d’oubli. 
+                & En tant qu’un utilisateur, je veux réinitialiser mon mot de passe si je l'oublie, pour retrouver l'accès. 
+                & 3.4.A \newline\vspace{0.5cm} 3.4.B 
+                &
+                - Créer une page de réinitialisation de mot de passe. \newline
+                - Implémenter la validation par email pour réinitialiser le mot de passe. 
+                & Moyenne & Moyenne & 1 \\ \hline
+            3.5 & Gérer le profil utilisateur. 
+                & En tant qu’un utilisateur, je veux modifier mes informations personnelles pour garder mes données à jour. 
+                & 3.5.A \newline\vspace{0.5cm} 3.5.B 
+                &
+                - Créer une page pour modifier les informations personnelles. \newline
+                - Implémenter la mise à jour des utilisateur dans la base de données. 
+                & Moyenne & Moyenne & 1/2 \\\hline
+              3.6 & Se déconnecter 
+                & En tant qu’un utilisateur, je veux me déconnecter de l’application.
+                & 3.6.A
+                &
+                - Implémenter un bouton de déconnexion sur l’interface frontend avec suppression du jeton de session. 
+                & Moyenne & Basse & 1/2 \\  \hline
+            \hline     
+            % ---- GESTION DES UTILISATEURS -----------
+            \hline  
+            \rowcolor{blue!20}
+			\multicolumn{8}{|c|}{\textbf{EPIC 11: Gestion des utilisateurs}} \\\hline
+            11.1 & Rechercher un utilisateur 
+            & En tant qu’administrateur, je souhaite rechercher un utilisateur avec différents filtres pour retrouver rapidement un profil. 
+            & 11.1.A 
+            & - Implémenter un champ de recherche avec filtres (nom, email, rôle…). 
+            & Élevée & Moyenne & 1/2 \\\hline
+            
+            11.2 & Exporter la liste des utilisateurs 
+            & En tant qu’administrateur, je souhaite exporter la liste des utilisateurs afin de la conserver.
+            & 11.2.A 
+            & - Générer un export (PDF/CSV/HTML /JSON) de la liste des utilisateurs. 
+            & Moyenne & Basse & 1/2 \\\hline
+            
+            11.3 & Consulter la liste des utilisateurs 
+            & En tant qu’administrateur, je souhaite voir la liste des utilisateurs pour une vue globale. 
+            & 11.3.A 
+            & - Afficher un tableau paginé listant les comptes avec leurs informations principales. 
+            & Moyenne & Basse & 1/4 \\\hline
+            11.4 & Supprimer un utilisateur 
+            & En tant qu’administrateur, je souhaite pouvoir supprimer un utilisateur du système. 
+            & 11.4.A 
+            & - Ajouter un bouton de suppression avec confirmation de sécurité. 
+            & Élevée & Moyenne & 1/4 \\\hline
+            
+            11.5 & Gérer les permissions des utilisateurs
+            & En tant qu’administrateur, je souhaite attribuer, modifier ou révoquer les permissions d’un utilisateur afin de contrôler ses droits d’accès.
+            & 11.5.A 
+            \newline\vspace{1.9cm} 11.5.B
+             \newline\vspace{0.5cm} 11.5.C
+            & - Créer une interface permettant d’attribuer, modifier, révoquer et visualiser les permissions d’accès aux différents types de scans (fonctionnel, SEO, sécurité) pour chaque utilisateur.\newline
+            - Implémenter des vérifications côté backend sur les routes sensibles.\newline
+            - Restreindre l’accès selon les permissions via des guards côté frontend.
+            & Élevée & Moyenne & 1/2 \\\hline
+
+            \rowcolor{gray!20}
+			\multicolumn{7}{|c|}{TOTAL} &  26UE \\
+            \hline 
+        \end{longtable}
+    \end{spacing}
+    \vspace{-0.1cm}
+\end{landscape}

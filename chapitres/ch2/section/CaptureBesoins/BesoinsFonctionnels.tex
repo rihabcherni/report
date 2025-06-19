@@ -1,0 +1,127 @@
+\begin{justify}
+    Les besoins fonctionnels définissent les actions attendues du système et les services à implémenter pour répondre aux attentes des utilisateurs\cite{bf}.
+    
+    Dans cette section, nous présentons les fonctionnalités que notre application doit assurer.
+    \begin{enumerate}[left=-0.01cm]
+        \item \textbf{Consulter la page d’accueil:} Accessible sans création de compte.
+        \begin{itemize}[label=$\bullet$, left=-0.05cm]
+            \item Parcourir la page d’accueil et consulter les sections publiques telles que la FAQ, le guide utilisateur, les services proposés, la présentation de l’équipe, la tarification, etc.
+            \item Contacter l’administrateur via un formulaire de contact.
+        \end{itemize}
+        \item \textbf{Authentification et gestion du profil utilisateur:} Permet de gérer l’accès sécurisé à la plateforme.
+            \begin{itemize}[label=$\bullet$, left=-0.05cm]
+                \item S'inscrire: permettre à un utilisateur de créer un compte.
+                \item Vérifier l’adresse e-mail après l’inscription: valider l'identité de l'utilisateur.
+                \item S’authentifier: accéder à la plateforme via des identifiants valides.
+                \item Se déconnecter: mettre fin à une session utilisateur.
+                \item Réinitialiser le mot de passe en cas d’oubli: retrouver l'accès à son compte.
+                \item Gérer le profil utilisateur: modifier les informations personnelles.
+            \end{itemize}
+        \item \textbf{Gestion des scans de tests de sécurité:} Assurer la détection automatique des vulnérabilités dans l’application web cible.
+            \begin{itemize}[label=$\bullet$, left=-0.05cm]    
+                \item Permettre la configuration des paramètres de scan selon les besoins spécifiques.
+                \item Sélectionner les outils de sécurité à utiliser pour l’analyse.
+                \item Lancer un scan de sécurité.
+                \item Lancer un scan de sécurité avec authentification dynamique (cookies, jetons ou identifiants) afin de tester les parties protégées de l’application.
+                \item Annuler un scan en cours : stopper un test lancé par erreur ou jugé inutile.
+                \item Relancer un scan : exécuter à nouveau une analyse avec les mêmes paramètres.
+                \item Planifier des scans automatiques pour une surveillance continue et garantir une sécurité régulière.
+                \item Suivre la progression du scan en temps réel via WebSocket pour une visibilité immédiate de l’exécution.
+                \item Visualiser les résultats du scan de sécurité: consulter les vulnérabilités détectées.
+                \item Intégrer avec Jira: créer automatiquement des tickets pour les résultats critiques et assurer le suivi des incidents.
+                \item Notifier via Slack: transmettre rapidement les résultats aux équipes concernées.
+                \item Envoyer les résultats du scan de sécurité par e-mail: diffuser automatiquement les analyses aux parties prenantes.
+                \item Gérer l’historique des rapports des scans de sécurité: conserver une trace des analyses précédentes.
+                \item Téléchargement des rapports aux formats HTML, JSON, PDF, CSV et ZIP.
+            \end{itemize}
+        \item \textbf{Gestion des scans fonctionnels:} Vérifier  le bon fonctionnement des différentes fonctionnalités métier dans l’application web cible.
+            \begin{itemize}[label=$\bullet$, left=-0.05cm]
+                \item Gérer les flux de travail (scénarios de test):
+                    \begin{itemize}[label=$-$, left=-0.08cm]
+                        \item Créer un scénario de test: définir un parcours utilisateur à valider.
+                        \item Modifier un scénario de test existant: ajuster les tests en fonction des évolutions.
+                        \item Exécuter un scénario de test: déclencher le test fonctionnel.
+                        \item Récupérer et afficher les scénarios de test, y compris leurs configurations et états d'exécution: assurer le suivi des tests.
+                    \end{itemize}
+                \item Gérer les cas de test associés à chaque scénario de test:
+                    \begin{itemize}[label=$-$, left=-0.08cm]
+                        \item Créer un cas de test: définir une étape précise à valider.
+                        \item Modifier un cas de test existant.
+                        \item Exécuter un cas de test.
+                        \item Lister les cas de test: afficher tous les cas disponibles.
+                        \item Récupérer et afficher les cas de test: accéder aux détails de chaque test.
+                    \end{itemize}
+                \item Gérer les différentes étapes associées à chaque cas de test:
+                    \begin{itemize}[label=$-$, left=-0.08cm]
+                        \item Créer une étape: définir une action précise à exécuter dans un cas de test.
+                        \item Modifier une étape: adapter une étape existante selon les nouvelles exigences.
+                        \item Supprimer une étape: retirer une action devenue obsolète ou incorrecte.
+                        \item Lister les étapes d’un cas de test: afficher l’enchaînement complet des actions définies.
+                        \item Récupérer et afficher les détails d’une étape: consulter les paramètres, objectifs et résultats attendus.
+                    \end{itemize}
+                \item Lancer un scan de test fonctionnel.
+                \item Planifier des scans fonctionnels automatiques réguliers.              
+                \item Relancer un scan fonctionnel : réexécuter un test fonctionnel existant.
+                \item Suivre en temps réel l’exécution du scan fonctionnel via WebSocket pour une meilleure visibilité du processus.
+                \item Visualiser les résultats: consulter les dysfonctionnements ou anomalies détectés.
+                \item Intégrer avec Jira: création automatique de tickets pour les anomalies critiques et suivi des incidents.
+                \item Notifier via Slack: transmission rapide des résultats aux équipes concernées.
+                \item Envoyer les résultats du scan par e-mail: diffusion automatique des analyses fonctionnelles aux parties prenantes.
+                \item Gérer l’historique des rapports des scans fonctionnels: conserver une trace des scénarios et cas de test exécutés.
+                \item Téléchargement des rapports des scans fonctionnels aux différents formats.
+            \end{itemize}
+        \item \textbf{Gestion des scans SEO:} Évaluer la qualité de référencement et les technologies utilisées dans l’application web cible.
+            \begin{itemize}[label=$\bullet$, left=-0.05cm]
+                \item Lancer une analyse SEO complète (balises HTML, performance, accessibilité...).
+                \item Relancer une analyse SEO : effectuer à nouveau un audit avec les mêmes critères.
+                \item Identifier les technologies et frameworks utilisés.
+                \item Extraire les mots-clés pertinents et analyser le contenu textuel.
+                \item Générer une capture d’écran de la page cible.
+                \item Calculer un score SEO global avec rapport détaillé.
+                \item Suivre en temps réel l’exécution du scan SEO via WebSocket pour une meilleure visibilité du processus.
+                \item Visualiser les résultats: consulter les points forts et axes d’amélioration du référencement.
+                \item Intégrer avec Jira: création automatique de tickets pour les problèmes SEO majeurs et suivi des actions correctives.
+                \item Notifier via Slack: transmission rapide des résultats aux équipes concernées.
+                \item Envoyer automatiquement les rapports SEO par e-mail aux parties prenantes.
+                \item Gérer l’historique des rapports des analyses SEO: conserver une trace des audits réalisés.
+                \item Téléchargement des rapports des analyses SEO aux différents formats.
+            \end{itemize}
+        \item \textbf{Gestion complète des analyses (fonctionnelles, de sécurité et SEO)}: Permet l’exécution simultanée des trois types d’analyses afin d’optimiser le temps de test, de centraliser les résultats dans un seul rapport consolidé et de faciliter la corrélation entre vulnérabilités, dysfonctionnements fonctionnels et recommandations SEO.
+    
+        \item \textbf{Consultation des statistiques des scans via les tableaux de bord interactifs:} Offrir une visualisation graphique personnalisée des résultats pour chaque type d’utilisateur.
+        \begin{itemize}[label=$\bullet$, left=-0.05cm]
+            \item \textbf{Tableau de bord administrateur:} Présenter sous forme de graphiques dynamiques l’ensemble des activités de scans (fonctionnels, sécurité, SEO) classées par période, type d’analyse ou niveau de gravité, ainsi que l’état global du système.
+            \item \textbf{Tableau de bord testeur:} Afficher sous forme des graphes les résultats des scans personnels, la répartition des vulnérabilités détectées, la progression des tests et la couverture fonctionnelle.
+        \end{itemize}
+        \item \textbf{Notifications en temps réel:} Améliorer la réactivité face aux alertes critiques.
+            \begin{itemize}[label=$\bullet$, left=-0.05cm]
+                \item Être notifié en temps réel des résultats pendant l’exécution des scans pour suivre en direct l’analyse.
+                \item Envoyer des alertes à l'utilisateur pour les vulnérabilités critiques pour agir rapidement en cas de danger.
+            \end{itemize}
+        \item \textbf{Configuration des paramètres d’envoi des rapports(Email, Jira et Slack):} Permet de définir les canaux de diffusion automatisée des résultats d’analyse.
+            \begin{itemize}[label=$\bullet$, left=-0.05cm]
+                \item Définir les identifiants et jetons d’accès pour Slack: assurer l’envoi automatisé des rapports.
+                \item Saisir les adresses e-mail des destinataires pour la diffusion des rapports.
+                \item Configurer l’URL, l’identifiant du projet et les clés API pour l’intégration avec Jira.
+                \item Sélectionner les types de rapports à envoyer (sécurité, fonctionnel, SEO).
+                \item Choisir les formats de rapports à transmettre (HTML, PDF, JSON, etc.).
+                \item Activer ou désactiver chaque canal de notification selon les préférences.
+            \end{itemize}
+        \item \textbf{Gestion des utilisateurs:} Assurer une administration des comptes.
+            \begin{itemize}[label=$\bullet$, left=-0.05cm]
+                \item Rechercher un utilisateur selon plusieurs filtres: retrouver rapidement un profil.
+                \item Exporter la liste des utilisateurs: conserver une copie administrative.
+                \item Consulter la liste des utilisateurs: avoir une vue globale des membres de la plateforme.
+                \item Gérer les permissions des utilisateurs.
+                \item Supprimer un utilisateur.
+            \end{itemize}
+        \item \textbf{Gestion des rapports pour l’administrateur:} Permettre à l’administrateur de superviser tous les rapports générés par les différents types de scans.
+        \begin{itemize}[label=$\bullet$, left=-0.05cm]
+            \item Accéder à l’ensemble des rapports de sécurité, fonctionnels et SEO générés par tous les utilisateurs.
+            \item Filtrer les rapports par type d’analyse, période ou utilisateur.
+            \item Rechercher un rapport spécifique.
+            \item Télécharger les rapports consolidés ou individuels dans différents différents formats.
+            \item Supprimer des rapports obsolètes pour maintenir une base de données claire et à jour.
+        \end{itemize}
+    \end{enumerate}
+\end{justify}

@@ -1,0 +1,441 @@
+\begin{justify}
+    Pour la réalisation de notre application, plusieurs outils logiciels ont été utilisés, incluant les environnements de développement, les bibliothèques, les frameworks, ainsi que des outils et des services externes. Cette section présente une description de ces éléments.
+    \subsubsection{Langages utilisés}
+        Les langages présentés dans le tableau~\ref{tab:Langages} ont été utilisés pour développer les différentes composantes de l'application.
+        \vspace{-0.3cm}
+        \begin{spacing}{1.2}
+            \begin{longtable}{|c|p{0.75\textwidth}|}
+                \caption{Langages utilisés}
+                \label{tab:Langages}\\
+                \hline
+                \textbf{Langage} & \textbf{Description} \\ \hline
+                
+                %% Python
+                \begin{minipage}{0.2\textwidth}
+                \centering
+                    \includegraphics[width=2cm]{chapitres/ch2/img/logiciel/python.png}
+                \end{minipage}
+                 & \begin{minipage}{0.75\textwidth} 
+                  \justifying
+                \vspace{0.2cm}
+                \textbf{Python} est utilisé pour le développement du backend avec le framework \textbf{FastAPI}. Ce langage est reconnu pour sa lisibilité et sa simplicité, ce qui facilite la création d'API REST performantes et évolutives\cite{python}.
+                \vspace{0.2cm}
+                \end{minipage}\\ \hline
+                
+                %% TypeScript
+                \begin{minipage}{0.2\textwidth}
+                \centering
+                    \includegraphics[width=1.8cm]{chapitres/ch2/img/logiciel/ts.png}
+                \end{minipage}
+                 & \begin{minipage}{0.75\textwidth} 
+                  \justifying
+                \vspace{0.2cm}
+                \textbf{TypeScript} est un sur-ensemble typé de JavaScript utilisé dans le développement de l'interface utilisateur via le framework \textbf{Angular}. Il permet de sécuriser le code et d'améliorer la maintenabilité des composants frontend\cite{typescript}.
+                \vspace{0.2cm}
+                \end{minipage}\\ \hline
+    
+                %% HTML
+                \begin{minipage}{0.2\textwidth}
+                \centering
+                \includegraphics[width=2cm]{chapitres/ch2/img/logiciel/html.png}
+                \end{minipage}
+                & \begin{minipage}{0.75\textwidth} 
+                \justifying
+                \vspace{0.2cm}
+                \textbf{HTML (HyperText Markup Language)} est le langage standard utilisé pour structurer les pages web. Il définit les éléments de base tels que les titres, paragraphes, liens, tableaux, formulaires, etc.\cite{html}.
+                \vspace{0.2cm}
+                \end{minipage}\\ \hline
+                
+                %% CSS
+                \begin{minipage}{0.2\textwidth}
+                \centering
+                \includegraphics[width=2cm]{chapitres/ch2/img/logiciel/css.png}
+                \end{minipage}
+                & \begin{minipage}{0.75\textwidth} 
+                \justifying
+                \vspace{0.2cm}
+                \textbf{CSS (Cascading Style Sheets)} est utilisé pour styliser les éléments HTML. Il permet de définir l'apparence des pages (couleurs, polices, marges, positionnement, etc.) afin d'améliorer l'expérience utilisateur\cite{css}.
+                \vspace{0.2cm}
+                \end{minipage}\\ \hline
+                            %% SQL (PostgreSQL)
+                \begin{minipage}{0.2\textwidth}
+                    \centering
+                        \includegraphics[width=2cm]{chapitres/ch2/img/logiciel/sql.jpg}
+                \end{minipage}
+                 & \begin{minipage}{0.75\textwidth} 
+                      \justifying
+                        \vspace{0.2cm}
+                        \textbf{SQL} est utilisé pour la gestion de la base de données relationnelle via le système \textbf{PostgreSQL}. Il permet de créer, manipuler et interroger les données de manière structurée\cite{postgresql}.
+                        \vspace{0.2cm}
+                \end{minipage}\\ \hline
+                %% YAML
+                \begin{minipage}{0.2\textwidth}
+                    \centering
+                        \includegraphics[width=2cm]{chapitres/ch2/img/logiciel/yaml.png}
+                \end{minipage}
+                 & \begin{minipage}{0.75\textwidth} 
+                    \justifying
+                    \vspace{0.2cm}
+                    \textbf{YAML} est utilisé pour la configuration des conteneurs dans \textbf{Docker Compose}. Il permet de définir les services, les volumes, les ports et les dépendances nécessaires au déploiement de l’application\cite{yaml}.
+                    \vspace{0.2cm}
+                \end{minipage}\\ \hline
+                
+                %% JSON
+                \begin{minipage}{0.2\textwidth}
+                    \centering
+                        \includegraphics[width=2cm]{chapitres/ch2/img/logiciel/json.jpg}
+                \end{minipage}
+                 & \begin{minipage}{0.75\textwidth} 
+                    \justifying
+                    \vspace{0.2cm}
+                    \textbf{JSON (JavaScript Object Notation)} est utilisé comme format d'échange de données entre le frontend Angular et le backend FastAPI, ainsi que pour la documentation des API via Swagger/OpenAPI\cite{json}.
+                    \vspace{0.2cm}
+                \end{minipage}\\ \hline
+                %% Bash
+                \begin{minipage}{0.2\textwidth}
+                    \centering
+                        \includegraphics[width=2cm]{chapitres/ch2/img/logiciel/bash.png}
+                \end{minipage}
+                 & \begin{minipage}{0.75\textwidth} 
+                    \justifying
+                    \vspace{0.2cm}
+                    \textbf{Bash} est utilisé pour automatiser l'exécution de scripts liés aux tests de sécurité, au déploiement des conteneurs Docker, à la gestion des dépendances, et à l'enchaînement des outils d’analyse\cite{bash}.
+                    \vspace{0.2cm}
+                \end{minipage}\\ \hline
+            \end{longtable}
+        \end{spacing}
+    \vspace{-0.2cm}
+    \subsubsection{Logiciels utilisés}
+    Le tableau~\ref{tab:Logiciels} présente un récapitulatif des outils employés pour la mise en œuvre de la solution ainsi que leurs descriptions.
+    \vspace{-0.2cm}
+            \begin{spacing}{1.1}
+                \begin{longtable}{|c|p{0.75\textwidth}|}
+                   \caption{Logiciels utilisés}
+                    \label{tab:Logiciels}\\
+                    \hline
+                    \textbf{Logiciel} & \textbf{Description} \\ \hline
+                    %% VS Code
+                    \begin{minipage}{0.2\textwidth}
+                    \centering
+                        \includegraphics[width=2.2cm]{chapitres/ch2/img/logiciel/vscode.png}
+                    \end{minipage}
+                     & \begin{minipage}{0.75\textwidth} 
+                      \justifying
+                    \vspace{0.2cm}
+                    \textbf{Visual Studio Code (VS Code)} est un éditeur de code source open-source de Microsoft, réputé pour sa polyvalence, sa légèreté et ses fonctionnalités avancées. Il offre un environnement extensible grâce à des extensions, ce qui simplifie le travail des programmeurs\cite{VisualStudioCode}.\vspace{0.2cm}
+                    \end{minipage}\\ \hline
+                    %% GitHub
+                    \begin{minipage}{0.2\textwidth}
+                    \centering
+                        \includegraphics[width=3.2cm]{chapitres/ch2/img/logiciel/gitlab.png}
+                    \end{minipage}
+                     & \begin{minipage}{0.75\textwidth}
+                      \justifying
+                    \vspace{0.2cm}
+                        \textbf{Gitlab} est une plateforme DevOps open source qui centralise le cycle de vie des projets logiciels : gestion de code, CI/CD, gestion de projet et sécurité. Elle favorise la collaboration, l’automatisation et la traçabilité, permettant aux équipes de planifier, développer, tester et déployer plus efficacement. Grâce à sa richesse fonctionnelle, elle s’impose comme un outil essentiel du développement moderne\cite{gitlab}.
+                    \vspace{0.2cm}
+                    \end{minipage}\\ \hline
+                    %% Git
+                    \begin{minipage}{0.2\textwidth}
+                    \centering
+                        \includegraphics[width=2.1cm]{chapitres/ch2/img/logiciel/git.png}
+                    \end{minipage}
+                     & \begin{minipage}{0.75\textwidth} 
+                     \justifying
+                    \vspace{0.2cm}
+                        \textbf{Git} permet la gestion efficace des branches pour travailler simultanément sur plusieurs projets sans conflits, en offrant une interface console conviviale, des algorithmes de fusion intelligents pour gérer les modifications simultanées de fichiers\cite{git}.
+                    \vspace{0.2cm}
+                    \end{minipage}\\ \hline
+                    %% Docker Desktop
+                    \begin{minipage}{0.2\textwidth}
+                    \centering
+                        \includegraphics[width=2.6cm]{chapitres/ch2/img/logiciel/Docker Desktop.png}
+                    \end{minipage}
+                     & \begin{minipage}{0.75\textwidth} 
+                      \justifying
+                    \vspace{0.2cm}
+                    \textbf{Docker Desktop} est une application pour Windows, macOS et Linux qui fournit une interface utilisateur graphique (GUI) pour gérer les conteneurs, images et réseaux Docker localement. Elle inclut Docker Engine, Docker CLI, Docker Compose, Kubernetes et d'autres outils utiles pour le développement et le test de conteneurs\cite{dockerdesktop}.
+                    \vspace{0.2cm}
+                    \end{minipage}\\ \hline
+                    %% WebSocket
+                    \begin{minipage}{0.2\textwidth}
+                    \centering
+                        \includegraphics[width=2cm]{chapitres/ch2/img/logiciel/websocket.png}
+                    \end{minipage}
+                     & \begin{minipage}{0.75\textwidth} 
+                      \justifying
+                    \vspace{0.2cm}
+                    \textbf{WebSocket} est un protocole de communication bidirectionnelle full-duplex permettant des échanges en temps réel entre client et serveur. Il est utilisé pour transmettre en direct les résultats des scans et notifier l’utilisateur via l’interface Angular\cite{websocket}.
+                    \vspace{0.2cm}
+                    \end{minipage}\\ \hline
+                    %% Overleaf
+                    \begin{minipage}{0.2\textwidth}
+                    \vspace{0.2cm}
+                    \centering
+                        \includegraphics[width=2.2cm]{chapitres/ch2/img/logiciel/overleaf.png}
+                    \end{minipage}
+                     & \begin{minipage}{0.75\textwidth}
+                      \justifying
+                    \vspace{0.2cm}
+                         \textbf{Overleaf} est une plateforme en ligne de rédaction collaborative en temps réel de documents LaTeX, conçue pour la création de documents scientifiques, académiques et techniques\cite{Overleaf}.
+                    \vspace{0.2cm}
+                    \end{minipage}\\ \hline
+                    %% StarUML
+                    \begin{minipage}{0.2\textwidth}
+                    \centering
+                        \includegraphics[width=1.9cm]{chapitres/ch2/img/logiciel/staruml.png}
+                    \end{minipage}
+                     & \begin{minipage}{0.75\textwidth} 
+                      \justifying
+                    \vspace{0.2cm}
+                         \textbf{StarUML} est un logiciel de modélisation UML utilisé pour concevoir des diagrammes pour la conception de logiciels. Il offre des fonctionnalités de modélisation avancées pour les concepteurs de logiciels\cite{StarUML}. \vspace{0.2cm}
+                    \end{minipage}\\ \hline
+                    %% Trello
+                    \begin{minipage}{0.2\textwidth}
+                    \centering
+                        \includegraphics[width=3cm]{chapitres/ch2/img/logiciel/openproject.png}
+                    \end{minipage}
+                     & \begin{minipage}{0.75\textwidth}
+                      \justifying
+                        \vspace{0.2cm}
+                         \textbf{OpenProject} est un logiciel de gestion de projet open source conçu pour être utilisé avec des méthodologies de gestion de projet traditionnelles, mais aussi dans un environnement agile ou une méthodologie hybride. Collaboratif, il offre un suivi de projet et une suite complète de fonctionnalités permettant de gérer des projets complexes\cite{openproject}.
+                    \vspace{0.2cm}
+                    \end{minipage}\\ \hline
+                    %% Postman
+                    \begin{minipage}{0.2\textwidth}
+                    \centering
+                        \includegraphics[width=2.2cm]{chapitres/ch2/img/logiciel/postman.png}
+                    \end{minipage}
+                     & \begin{minipage}{0.75\textwidth} 
+                      \justifying
+                    \vspace{0.2cm}
+                         \textbf{Postman} est un outil de développement d'API qui permet aux développeurs de tester, de documenter et de surveiller les API de manière efficace. Il offre une interface conviviale pour créer des requêtes HTTP, automatiser des tests et collaborer sur des projets d'API \cite{Postman}.
+                    \vspace{0.2cm}
+                    \end{minipage}\\ \hline
+            
+            
+                    \begin{minipage}{0.2\textwidth}
+                    \centering
+                        \includegraphics[width=2.2cm]{chapitres/ch2/img/logiciel/Swagger.png}
+                    \end{minipage}
+                     & \begin{minipage}{0.75\textwidth} 
+                      \justifying
+                    \vspace{0.2cm}
+                        \textbf{Swagger} est un langage de description d’interface permettant de définir des API REST à l’aide du format JSON. Il s’appuie sur la spécification OpenAPI, qui standardise la description de la structure d’une API. Il permet de concevoir, documenter, tester et consommer des API REST facilitant ainsi la compréhension et l’intégration des services web\cite{Swagger}.
+                    \vspace{0.2cm}
+                    \end{minipage}\\ \hline
+            
+                \begin{minipage}{0.2\textwidth}
+                    \centering
+                        \includegraphics[width=2.2cm]{chapitres/ch2/img/logiciel/Selenium.png}
+                    \end{minipage}
+                     & \begin{minipage}{0.75\textwidth} 
+                      \justifying
+                    \vspace{0.2cm}
+                        \textbf{Selenium} est un outil open-source largement utilisé pour l'automatisation des tests des applications web. Il permet d'écrire des scripts de test dans divers langages de programmation comme Java, Python, C\#. Il permet de simuler des interactions utilisateur telles que les clics, la saisie de texte et la navigation entre les pages, ce qui est essentiel pour les tests fonctionnels des applications web.\cite{selenium}.
+                    \vspace{0.2cm}
+                    \end{minipage}\\ \hline
+                \end{longtable}
+            \end{spacing}
+            \vspace{-0.1cm}
+    \subsubsection{ Frameworks utilisées}
+    Le tableau~\ref{tab:Libs} présente les principales  frameworks utilisées dans le développement de l'application, réparties entre le backend et le frontend. Ces  frameworks  ont permis de faciliter le développement, d'améliorer les performances et de garantir la sécurité et la maintenabilité du projet.
+    \begin{spacing}{1.1}
+        \begin{longtable}{|c|p{0.75\textwidth}|}
+            \caption{Bibliothèques utilisées}
+            \label{tab:Libs}\\
+            \hline
+            \textbf{Bibliothèque} & \textbf{Description} \\ \hline
+            
+            %% FastAPI
+            \begin{minipage}{0.2\textwidth}
+                \centering
+                    \includegraphics[width=1.9cm]{chapitres/ch2/img/logiciel/fastapi.png}
+            \end{minipage}
+             & \begin{minipage}{0.75\textwidth} 
+                \justifying
+                \vspace{0.2cm}
+                \textbf{FastAPI} est une bibliothèque Python moderne permettant de créer des API web de manière rapide, performante et avec une documentation automatique générée via OpenAPI/Swagger\cite{fastapi}.
+                \vspace{0.2cm}
+            \end{minipage}\\ \hline
+            
+            %% Angular 
+            \begin{minipage}{0.2\textwidth}
+                \centering
+                    \includegraphics[width=2.6cm]{chapitres/ch2/img/logiciel/angular.png}
+            \end{minipage}
+             & \begin{minipage}{0.75\textwidth} 
+                    \justifying
+                    \vspace{0.2cm}
+                    \textbf{Angular} est un framework de développement frontend basé sur TypeScript, utilisé pour concevoir des applications web dynamiques, modulaires et performantes. Il propose une architecture robuste fondée sur des composants, un système de routage, des formulaires réactifs ainsi qu’une gestion d’état, facilitant le développement d’interfaces utilisateur complexes \cite{angular}.
+                    \vspace{0.1cm}
+            \end{minipage}\\ \hline
+            
+            %% Bootstrap
+            \begin{minipage}{0.2\textwidth}
+                \centering
+                \includegraphics[width=2cm]{chapitres/ch2/img/logiciel/bootstrap.jpg}
+                \end{minipage}
+                & \begin{minipage}{0.75\textwidth} 
+                \justifying
+                \vspace{0.2cm}
+                \textbf{Bootstrap} est une bibliothèque CSS open-source qui facilite le développement de sites web réactifs. Elle fournit des composants préconçus (boutons, cartes, grilles) et garantit une compatibilité multi-appareils\cite{bootstrap}.
+                \vspace{0.2cm}
+                \end{minipage}\\ \hline
+            \end{longtable}
+        \end{spacing}
+    \vspace{-0.1cm}
+    \subsubsection{Outils de sécurité utilisés}
+    Le tableau~\ref{tab:OutilsSecurite} présente les outils de sécurité employés pour les tests de vulnérabilités et l'analyse de sécurité de l'application.
+    \begin{spacing}{1.1}
+        \begin{longtable}{|c|p{0.75\textwidth}|}
+            \caption{Outils de sécurité utilisés}
+            \label{tab:OutilsSecurite}\\
+            \hline
+            \textbf{Outil} & \textbf{Description} \\ \hline
+            
+            %% ZAP
+            \begin{minipage}{0.2\textwidth}
+                \centering
+                    \includegraphics[width=2.4cm]{chapitres/ch2/img/tools/zap.png}
+            \end{minipage}
+             & \begin{minipage}{0.75\textwidth} 
+                \justifying
+                \vspace{0.2cm}
+                \textbf{ZAP (OWASP Zed Attack Proxy)} est un outil open-source de test de sécurité des applications web. Il permet de détecter automatiquement les vulnérabilités courantes telles que les failles XSS (Cross-Site Scripting), CSRF (Cross-Site Request Forgery), et les injections SQL dans les applications web\cite{zap}.
+                \vspace{0.2cm}
+            \end{minipage}\\ \hline
+            
+            %% SQLMap
+            \begin{minipage}{0.2\textwidth}
+                \centering
+                    \includegraphics[width=3.4cm]{chapitres/ch2/img/tools/sqlmap.png}
+            \end{minipage}
+             & \begin{minipage}{0.75\textwidth} 
+                \justifying
+                \vspace{0.2cm}
+                \textbf{SQLMap} est un outil automatisé open-source spécialisé dans la détection et l'exploitation des vulnérabilités d'injection SQL. Il prend en charge de nombreux systèmes de gestion de bases de données et offre des techniques avancées pour l'extraction de données et la prise de contrôle des bases de données vulnérables\cite{sqlmap}.
+                \vspace{0.2cm}
+            \end{minipage}\\ \hline
+            
+            %% Wapiti
+            \begin{minipage}{0.2\textwidth}
+                \centering
+                    \includegraphics[width=2.8cm]{chapitres/ch2/img/tools/wapiti.png}
+            \end{minipage}
+             & \begin{minipage}{0.75\textwidth} 
+                \justifying
+                \vspace{0.2cm}
+                \textbf{Wapiti} est un scanner de vulnérabilités web open-source qui effectue des audits de sécurité en analysant les pages web pour détecter les scripts et les formulaires où il pourrait injecter des données. Il permet d'identifier diverses vulnérabilités comme les injections SQL, XSS, et les inclusions de fichiers\cite{wapiti}.
+                \vspace{0.2cm}
+            \end{minipage}\\ \hline
+            
+            %% Nikto
+            \begin{minipage}{0.2\textwidth}
+                \centering
+                    \includegraphics[width=2.4cm]{chapitres/ch2/img/tools/nikto.png}
+            \end{minipage}
+             & \begin{minipage}{0.75\textwidth} 
+                \justifying
+                \vspace{0.2cm}
+                \textbf{Nikto} est un scanner de vulnérabilités web open-source qui effectue des tests complets contre les serveurs web pour multiple vulnérabilités, incluant plus de 6700 fichiers/programmes potentiellement dangereux, les versions obsolètes de serveurs, et les problèmes de configuration spécifiques aux serveurs\cite{nikto}.
+                \vspace{0.2cm}
+            \end{minipage}\\ \hline
+            
+            %% Nuclei
+            \begin{minipage}{0.2\textwidth}
+                \centering
+                    \includegraphics[width=3.2cm]{chapitres/ch2/img/tools/nuclei.png}
+            \end{minipage}
+             & \begin{minipage}{0.75\textwidth} 
+                \justifying
+                \vspace{0.2cm}
+                \textbf{Nuclei} est un scanner de vulnérabilités rapide et personnalisable basé sur des templates YAML. Il permet d'effectuer des scans de sécurité à grande échelle avec une approche modulaire, supportant la détection de diverses vulnérabilités web, réseau et cloud\cite{nuclei}.
+                \vspace{0.2cm}
+            \end{minipage}\\ \hline
+            
+            %% Nmap
+            \begin{minipage}{0.2\textwidth}
+                \centering
+                    \includegraphics[width=2.8cm]{chapitres/ch2/img/tools/nmap.png}
+            \end{minipage}
+             & \begin{minipage}{0.75\textwidth} 
+                \justifying
+                \vspace{0.2cm}
+                \textbf{Nmap (Network Mapper)} est un outil open-source de découverte réseau et d'audit de sécurité. Il permet de scanner les ports ouverts, identifier les services en cours d'exécution, détecter les systèmes d'exploitation, et effectuer des scripts de reconnaissance avancés sur les réseaux\cite{nmap}.
+                \vspace{0.2cm}
+            \end{minipage}\\ \hline
+            
+            %% XSStrike
+            \begin{minipage}{0.2\textwidth}
+                \centering
+                    \includegraphics[width=2.4cm]{chapitres/ch2/img/tools/XSStrike.png}
+            \end{minipage}
+             & \begin{minipage}{0.75\textwidth} 
+                \justifying
+                \vspace{0.2cm}
+                \textbf{XSStrike} est un outil avancé de détection des vulnérabilités Cross-Site Scripting (XSS). Il utilise des techniques de fuzzing intelligentes et une analyse contextuelle pour identifier les failles XSS complexes que les scanners traditionnels pourraient manquer\cite{xsstrike}.
+                \vspace{0.2cm}
+            \end{minipage}\\ \hline
+            
+            %% PwnXSS
+            \begin{minipage}{0.2\textwidth}
+                \centering
+                    \includegraphics[width=3.6cm]{chapitres/ch2/img/tools/PwnXSS.png}
+            \end{minipage}
+             & \begin{minipage}{0.75\textwidth} 
+                \justifying
+                \vspace{0.2cm}
+                \textbf{PwnXSS} est un outil spécialisé dans la détection avancée des vulnérabilités Cross-Site Scripting. Il offre des capacités de scanning automatisé avec des payloads personnalisés et une analyse approfondie des réponses pour identifier les failles XSS dans diverses configurations d'applications web\cite{pwnxss}.
+                \vspace{0.2cm}
+            \end{minipage}\\ \hline
+            
+            %% WafW00f
+            \begin{minipage}{0.2\textwidth}
+                \centering
+                    \includegraphics[width=2.4cm]{chapitres/ch2/img/tools/wafw00f.png}
+            \end{minipage}
+             & \begin{minipage}{0.75\textwidth} 
+                \justifying
+                \vspace{0.2cm}
+                \textbf{WafW00f} est un outil Python conçu pour identifier et fingerprinter les Web Application Firewalls (WAF) protégeant une application web. Il permet aux testeurs de sécurité de déterminer la présence et le type de WAF afin d'adapter leurs stratégies de test en conséquence\cite{wafw00f}.
+                \vspace{0.2cm}
+            \end{minipage}\\ \hline
+            
+            %% WhatWeb
+            \begin{minipage}{0.2\textwidth}
+                \centering
+                    \includegraphics[width=3.6cm]{chapitres/ch2/img/tools/Whatweb.png}
+            \end{minipage}
+             & \begin{minipage}{0.75\textwidth} 
+                \justifying
+                \vspace{0.2cm}
+                \textbf{WhatWeb} est un outil de reconnaissance web qui identifie les technologies utilisées par un site web, incluant les systèmes de gestion de contenu, les frameworks, les serveurs web, les bibliothèques JavaScript, et d'autres composants technologiques. Il est essentiel pour le fingerprinting et la reconnaissance passive\cite{whatweb}.
+                \vspace{0.2cm}
+            \end{minipage}\\ \hline
+        \end{longtable}
+    \end{spacing}
+    \vspace{-0.1cm}
+    \subsubsection{Système de gestion de base de données : PostgreSQL}
+        \begin{minipage}{0.25\textwidth}
+            \centering
+            \includegraphics[width=3cm]{chapitres/ch2/img/logiciel/postgresql.png}
+        \end{minipage}
+        \begin{minipage}{0.75\textwidth} 
+            \justifying
+            \textbf{PostgreSQL} est un système de gestion de base de données relationnelle (SGBDR) open-source reconnu pour sa robustesse, sa conformité aux standards SQL, et son extensibilité. Il est utilisé pour stocker les données de manière fiable, en assurant l'intégrité des transactions, la cohérence et la sécurité des informations.
+        \end{minipage}
+        
+        Dans notre application, PostgreSQL permet de gérer les entités principales telles que les utilisateurs, les messages, les enregistrements de données, etc. Il est accédé via SQLAlchemy, un ORM Python, facilitant les interactions entre les objets du backend (FastAPI) et la base de données.
+    \subsubsection{Système de gestion des files de messages : RabbitMQ}
+        \begin{minipage}{0.25\textwidth}
+            \centering
+            \includegraphics[width=3cm]{chapitres/ch2/img/logiciel/rabbitmq.png}
+        \end{minipage}
+        \begin{minipage}{0.75\textwidth} 
+            \justifying
+            \textbf{RabbitMQ} est un broker de messages open-source basé sur le protocole AMQP, permettant une communication asynchrone entre microservices et composants distribués. Il facilite le traitement parallèle ainsi que la gestion des files d’attente dans l’architecture backend \cite{rabbitmq}.
+        \end{minipage}
+        
+        Dans notre application, RabbitMQ gère la mise en file d’attente des tâches de scans de sécurité afin d’améliorer les performances en limitant le nombre de scans exécutés simultanément et en évitant la surcharge des ressources. Les requêtes de scan sont placées dans des queues puis consommées par des workers dédiés, ce qui garantit une exécution efficace, fiable et scalable. Cette architecture favorise la tolérance aux pannes, le traitement asynchrone et l’extensibilité future. L’intégration s’appuie sur la bibliothèque Python \texttt{pika}, connectée au backend FastAPI, qui orchestre la production et la consommation des messages. Ainsi, les producteurs (backend FastAPI) envoient les requêtes de scan vers RabbitMQ, tandis que les consommateurs (workers) traitent ces messages en parallèle, optimisant la gestion de la charge et les performances.
+\end{justify}

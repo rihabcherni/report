@@ -1,0 +1,137 @@
+Dans cette section, nous présenterons le Backlog du sprint 2, illustré dans le tableau \ref{tab:backlogS2}, en tenant compte des modifications et ajustements apportés depuis le sprint précédent.
+\begin{landscape}
+    \renewcommand{\arraystretch}{1}
+    \begin{spacing}{0.98}
+        \begin{longtable}{|p{0.5cm}|p{3cm}|p{6cm}|p{0.9cm}|p{7.8cm}|p{0.6cm}|p{0.6cm}|p{1.2cm}|}
+            \caption{Backlog du sprint 2.1} \label{tab:backlogS2} \\\hline
+            \rowcolor{gray!20}
+            \textbf{\small ID US} & 
+            \multicolumn{1}{c|}{\textbf{\small User Story}} & 
+            \multicolumn{1}{c|}{\textbf{\small Description}} & 
+            \textbf{\small ID tâche}& 
+            \multicolumn{1}{c|}{\textbf{\small Tâches}} & 
+            \multicolumn{1}{c|}{\textbf{\small Priorité}} & 
+            \multicolumn{1}{c|}{\textbf{\small Risques}} & 
+            \textbf{\small Estim-ation(j)} \\\hline          
+            % ----------- SCANS Fonctionnels -----------------
+            \hline  
+            \rowcolor{blue!20}
+			\multicolumn{8}{|c|}{\textbf{EPIC 5: Gestion des tests fonctionnels d'un site web}} \\\hline
+                5.1 & Gérer les scénarios de test "Workflow".
+                    & En tant que testeur, je dois gérer les scénarios de test pour assurer la couverture fonctionnelle. 
+                    & 5.1.A \newline\vspace{0.5cm} 5.1.B
+                    &
+                    - Ajouter la possibilité de créer, modifier, exécuter et supprimer des scénarios de test. \newline
+                    - Afficher les résultats des scénarios.
+                    & Élevée & Moyenne & 2 \\ \hline            
+                 5.2 & Gérer les cas de test associés à chaque scénario de test. 
+                    & En tant que testeur, je dois manipuler les cas de test pour valider les différentes fonctionnalités. 
+                    & 5.2.A \newline\vspace{0.5cm} 5.2.B 
+                    &
+                    - Implémenter la création, la modification, la suppression et l'exécution de cas de test pour chaque scénario. \newline
+                    - Afficher les résultats et les erreurs liées aux cas de test.
+                    & Élevée & Moyenne & 2 \\ \hline
+                
+                5.3 & Gérer les étapes associées à chaque cas de test. 
+                    & En tant que testeur, je dois gérer les étapes de test pour garantir le bon déroulement des tests. 
+                    & 5.3.A \newline\vspace{0.5cm} 5.3.B
+                    &
+                    - Implémenter la gestion des étapes de test pour chaque cas. \newline
+                    - Ajouter un suivi de l'état des étapes de test exécutées.
+                    & Moyenne & Basse & 2 \\ \hline
+                
+                5.4 & Lancer un scan de test fonctionnel. 
+                    & En tant que testeur, je souhaite exécuter automatiquement des tests fonctionnels afin de vérifier la fiabilité de l'application.
+                    & 5.4.A \newline\vspace{0.5cm} 5.4.B
+                    &
+                    - Ajouter la fonctionnalité pour démarrer un scan de test fonctionnel. \newline
+                    - Générer et afficher les rapports de tests après exécution.
+                    & Moyenne & Basse & 2 \\ \hline
+                \hline
+                5.5 & Planifier l'exécution les scans fonctionnels
+                    & En tant que testeur, je souhaite planifier l'automatisation des tests fonctionnels pour garantir une exécution régulière.
+                    & 5.5.A \newline\vspace{0.5cm} 5.5.B 
+                    & - Ajouter un système de planification (scheduler). \newline
+                      - Permettre l'exécution automatique selon un planning défini.
+                    & Élevée & Moyenne & 2 \\\hline
+                
+                5.6 & Suivre l'exécution fonctionnels en temps réel
+                    & En tant que testeur, je veux suivre les tests via WebSocket pour visualiser la progression.
+                    & 5.6.A 
+                    & - Intégration WebSocket pour monitoring en temps réel.
+                    & Moyenne & Basse & 1 \\\hline
+                
+                5.7 & Visualiser les résultats des tests fonctionnels
+                    & En tant que testeur, je souhaite consulter les résultats des tests exécutés pour corriger les bugs.
+                    & 5.7.A \newline\vspace{0.5cm} 5.7.B 
+                    & - Créer une interface pour visualiser les anomalies et logs de tests. \newline
+                      - Ajouter des filtres et détails pour chaque scénario ou cas de test.
+                    & Élevée & Moyenne & 2 \\\hline
+                
+                5.8 & Intégrer les résultats de tests avec Jira, Slack et email
+                    & En tant que testeur, je souhaite envoyer les anomalies détectées vers Jira, Slack et email automatiquement.
+                    & 5.8.A \newline\vspace{0.5cm} 5.8.B \newline 5.8.C
+                    & - Ajouter une intégration API avec Jira pour la création de tickets.\newline
+                    - Envoi automatisé des résultats via Slack. \newline
+                    - Envoi des rapports par email.
+                    & Moyenne & Moyenne & 2 \\\hline
+                5.9 & Gérer l'historique et télécharger les rapports.
+                    & En tant que testeur, je souhaite consulter l'historique des rapports des scans fonctionnels et les exporter.
+                    & 5.9.A \newline\vspace{0.5cm} 5.9.B
+                    & - Stocker l'historique des rapports (base de données ou fichiers). \newline
+                      - Exporter les rapports HTML, JSON, CSV, PDF, ZIP.
+                    & Élevée & Moyenne & 2 \\\hline
+         % ----------- EPIC 6: SEO -----------------
+                \hline
+                \rowcolor{blue!20}
+                \multicolumn{8}{|c|}{\textbf{EPIC 6: Gestion des analyses SEO d'un site web}} \\\hline
+                
+                6.1 & Lancer une analyse SEO complète
+                    & En tant que testeur, je veux analyser le site cible pour évaluer sa qualité SEO.
+                    & 6.1.A \newline\vspace{0.5cm} 6.1.B 
+                    & - Implémenter l'analyse SEO : balises, performances, mots clés... \newline
+                      - Calculer un score global SEO.
+                    & Élevée & Moyenne & 2 \\\hline
+                
+                6.2 & Identifier les technologies et mots-clés
+                    & En tant qu'auditeur, je veux connaître les frameworks utilisés et les mots-clés extraits.
+                    & 6.2.A 
+                    & - Extraire les CMS, JS, langages backend et mots-clés textuels.
+                    & Moyenne & Moyenne & 1 \\\hline
+                
+                6.3 & Générer une capture d'écran de la page cible
+                    & En tant que testeur, je veux voir un aperçu visuel de la page analysée.
+                    & 6.3.A 
+                    & - Générer automatiquement une capture d'écran avec Puppeteer ou outil équivalent.
+                    & Moyenne & Faible & 1 \\\hline
+                
+                6.4 & Suivre l'analyse SEO en temps réel
+                    & En tant que testeur, je souhaite voir la progression du scan SEO en live.
+                    & 6.5.A 
+                    & - Intégration WebSocket pour progression de l'analyse.
+                    & Basse & Faible & 1 \\\hline
+                
+                6.5 & Visualiser et exploiter les résultats SEO
+                    & En tant que testeur, je veux lire les points forts et axes d'amélioration SEO.
+                    & 6.5.A 
+                    & - Créer une interface de visualisation du rapport SEO et classer par catégorie : technique, contenu, performance...
+                    & Élevée & Moyenne & 2 \\\hline
+                
+                6.6 & Intégration Jira / Slack / Email pour SEO
+                    & En tant qu'auditeur, je veux notifier et suivre les anomalies SEO détectées.
+                    & 6.6.A \newline\vspace{0.5cm} 6.6.B \newline 6.6.C
+                    & - Créer des tickets Jira automatiquement pour problèmes critiques. \newline
+                      - Notification via Slack. \newline
+                      - Envoi du rapport SEO par email.
+                    & Moyenne & Faible & 2 \\\hline
+                6.7 & Historique et export des rapports SEO
+                    & En tant que testeur, je veux pouvoir retrouver et télécharger les rapports SEO précédents.
+                    & 6.7.A 
+                    & - Gérer l'historique et exporter les rapports (HTML, JSON, PDF, ZIP, CSV).
+                    & Moyenne & Moyenne & 1 \\\hline          
+            \rowcolor{gray!20}
+			\multicolumn{7}{|c|}{TOTAL} &  25 \\
+            \hline 
+        \end{longtable}
+    \end{spacing}
+\end{landscape}

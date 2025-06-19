@@ -1,0 +1,55 @@
+Dans cette section, nous présentons les principales interfaces développées durant ce sprint 2.1, en commençant par la gestion des tests fonctionnels, puis les interfaces liées à l'analyse SEO.
+\begin{itemize}[label=$\bullet$]
+    \item \textbf{Interface centralisée de gestion des tests fonctionnels:} La figure \ref{fig:interface-tests-fonctionnels}\footnote{Voir annexe E: Figure \ref{fig:interface-tests-fonctionnels}} illustre une interface unifiée dédiée à la gestion complète des tests fonctionnels. Elle permet à l’utilisateur de gérer l’ensemble du processus de test, depuis la création des scénarios jusqu’à l’exécution des tests. L’interface offre les fonctionnalités suivantes: création, modification, suppression et exécution des scénarios de test ; gestion des cas de test associés à chaque scénario, avec affichage des résultats et erreurs ; définition des étapes composant chaque cas de test, avec une visualisation détaillée des actions à réaliser et de leur statut ; enfin, lancement et suivi en temps réel des scans fonctionnels. Cette interface vise à centraliser et simplifier l’ensemble du cycle de vie des tests fonctionnels.
+    \item \textbf{Interface de planification des scans fonctionnels}:
+    La figure \ref{fig:planification-tests}\footnote{Voir annexe E: Figures \ref{fig:planification-tests}} illustre la fonctionnalité de planification de scans. Cette interface permet de configurer des exécutions automatiques selon une fréquence prédéfinie.
+    
+    \item \textbf{Interface de suivi en temps réel des exécutions fonctionnelles}:
+    La figure \ref{fig:realtime-fonctionnel}\footnote{Voir annexe E: Figures \ref{fig:realtime-fonctionnel}} affiche une vue dynamique basée sur WebSocket pour suivre en direct l'exécution des tests.
+    
+    \item \textbf{Interface de visualisation des résultats fonctionnels}:
+    La figure \ref{fig:resultats-fonctionnels}\footnote{Voir annexe E: Figures \ref{fig:resultats-fonctionnels}} présente les anomalies détectées, les logs détaillés, ainsi que des filtres permettant une analyse par scénario ou cas de test.
+    
+    \item \textbf{Interface d’intégration des résultats fonctionnels avec Jira, Slack et Email}:
+    La figure \ref{fig:integration-resultats}\footnote{Voir annexe E: Figures \ref{fig:integration-resultats}} illustre l’écran de configuration des services tiers pour l’envoi automatique des rapports fonctionnels.
+    
+    \item \textbf{Interface d’historique des rapports fonctionnels}:
+    La figure \ref{fig:historique-fonctionnel}\footnote{Voir annexe E: Figures \ref{fig:historique-fonctionnel}} montre l’interface de consultation des rapports précédents, avec options de tri, téléchargement en formats HTML, PDF, ZIP, etc.
+    
+    \item \textbf{Interface de lancement d’analyse SEO}:
+    La figure \ref{fig:lancer-seo}\footnote{Voir annexe E: Figures \ref{fig:lancer-seo}} présente la page d'exécution d’un scan SEO complet, incluant balises, performance, accessibilité et mots-clés.
+    
+    \item \textbf{Interface d’identification des technologies et mots-clés SEO}:
+    La figure \ref{fig:techno-keywords}\footnote{Voir annexe E: Figures \ref{fig:techno-keywords}} illustre les informations extraites sur les frameworks (CMS, JS, backend) et mots-clés présents sur la page cible.
+    
+    \item \textbf{Interface de capture d’écran SEO}:
+    La figure \ref{fig:capture-seo}\footnote{Voir annexe E: Figures \ref{fig:capture-seo}} affiche l'aperçu visuel de la page scannée générée automatiquement à l’aide d’un outil de capture (ex: Puppeteer).
+    
+    \item \textbf{Interface de suivi temps réel du scan SEO}:
+    La figure \ref{fig:seo-realtime}\footnote{Voir annexe E: Figures \ref{fig:seo-realtime}} montre l’évolution du scan SEO en temps réel grâce à WebSocket, avec visualisation de la progression.
+    
+    \item \textbf{Interface de visualisation des résultats SEO}:
+    La figure \ref{fig:resultats-seo}\footnote{Voir annexe E: Figures \ref{fig:resultats-seo}} permet de consulter les résultats d’analyse SEO, classés par catégorie: contenu, technique, performance.
+    
+    \item \textbf{Interface d’intégration SEO avec Jira, Slack et Email}:
+    La figure \ref{fig:integration-seo}\footnote{Voir annexe E: Figures \ref{fig:integration-seo}} permet la configuration des intégrations pour automatiser l’envoi des alertes SEO détectées.
+    
+    \item \textbf{Interface d’historique des rapports SEO}:
+    La figure \ref{fig:historique-seo}\footnote{Voir annexe E: Figures \ref{fig:historique-seo}} fournit un tableau listant les rapports d’analyse SEO archivés, avec fonctionnalités d’export dans différents formats.
+\end{itemize}
+
+
+
+
+   % \item \textbf{Interface de la gestion des scénarios de test}:
+    % La figure \ref{fig:scenario-test}\footnote{Voir annexe E: Figures \ref{fig:scenario-test}} illustre l’interface permettant de créer, modifier, exécuter ou supprimer des scénarios de test fonctionnels. L’utilisateur peut y consulter l’ensemble des scénarios définis, visualiser leurs statuts, et lancer leur exécution.
+    
+    % \item \textbf{Interface de gestion des cas de test}:
+    % La figure \ref{fig:cas-test}\footnote{Voir annexe E: Figures \ref{fig:cas-test}} montre l’interface dédiée à la gestion des cas de test liés à chaque scénario. Elle permet d’ajouter, modifier ou supprimer des cas, tout en affichant les résultats et erreurs d’exécution.
+    
+    % \item \textbf{Interface de gestion des étapes de test}:
+    % La figure \ref{fig:etapes-test}\footnote{Voir annexe E: Figures \ref{fig:etapes-test}} représente l’interface utilisée pour gérer les étapes constituant chaque cas de test. Elle fournit une vue détaillée des actions à exécuter ainsi que leur statut d'exécution.
+    
+    % \item \textbf{Interface de lancement des tests fonctionnels}:
+    % La figure \ref{fig:lancer-scan-fonctionnel}\footnote{Voir annexe E: Figures \ref{fig:lancer-scan-fonctionnel}} montre la page qui permet de démarrer un scan fonctionnel. L'utilisateur peut choisir un scénario, lancer son exécution et suivre sa progression.
+    

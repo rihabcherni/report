@@ -1,0 +1,135 @@
+\chapter*{
+    \begin{center}
+        \vspace{-2.5cm}
+        {\Large Annexe C: Automatisation des outils de pentesting}
+    \end{center}
+}
+\addcontentsline{toc}{chapter}{Annexe C: Automatisation des outils de pentesting}
+\vspace{-2cm}
+\begin{justify}
+\vspace{-0.5cm}
+{\fontsize{14}{17}\selectfont \textbf{Introduction}} \\
+Dans le cadre de l’automatisation des tests de sécurité web, l’analyse des vulnérabilités s’est imposée comme une étape essentielle. Pour cela, plusieurs outils spécialisés ont été intégrés afin de couvrir un large spectre de failles : injections SQL, XSS, erreurs de configuration serveur, ports exposés, etc. Cette annexe présente les principaux outils utilisés dans le projet, ainsi que les commandes associées, les fonctionnalités exploitées et les résultats attendus.
+\begin{enumerate}[left=0cm]
+    \item \textbf{XSStrike \cite{XSStrike}} \\
+            \textbf{Objectif :} Détecter et exploiter les failles XSS (Cross-Site Scripting) sur les sites web. Il effectue une analyse avancée des paramètres d'URL et des entrées utilisateur pour identifier et contourner les mécanismes de protection anti-XSS.
+            
+            \textbf{Fonctionnalités :}
+            \begin{itemize}[label=$\bullet$]
+                \item Analyse avancée des paramètres des requêtes HTTP.
+                \item Détection automatique des vulnérabilités XSS.
+                \item Génération et test de payloads XSS personnalisés.
+                \item Supporte le crawling pour analyser plusieurs pages d'un site.
+                \item Multi-threading pour une analyse plus rapide.
+                \item Évite les filtres XSS courants grâce à des techniques avancées.
+            \end{itemize}
+            
+            \textbf{Commande :}
+            \begin{lstlisting}[language=bash]
+            python {XSSStrike_path} -u {url} --crawl -l 7 --threads 10 > log.txt 2>&1
+            \end{lstlisting}
+            
+            \textbf{Explication des options :}
+            \begin{itemize}[label=$\bullet$]
+                \item \texttt{-u {url}}: Spécifie l'URL cible.
+                \item \texttt{--crawl}: Active le crawling pour détecter les pages internes.
+                \item \texttt{-l 7}: Définit la profondeur du crawl (7 niveaux).
+                \item \texttt{--threads 10}: Utilise 10 threads pour accélérer l’analyse.
+                \item \texttt{> log.txt 2>\&1}: Enregistre la sortie et les erreurs dans un fichier \texttt{log.txt}.
+            \end{itemize}
+            
+            \textbf{Résultat attendu :}
+            \begin{itemize}[label=$\bullet$]
+                \item Phase de crawling : Exploration des pages internes du site.
+                \item Parsing des fichiers : Analyse des paramètres et des zones vulnérables dans les pages.
+                \item Détection d’éléments potentiellement vulnérables.
+                \item Détection de code susceptible d’être exploité (par exemple \texttt{innerHTML} manipulé).
+            \end{itemize}
+    \item \textbf{Nmap} \\
+        \textbf{Objectif :} Analyser les réseaux et identifier les ports ouverts, services actifs et vulnérabilités potentielles.
+        
+        \textbf{Fonctionnalités :}
+        \begin{itemize}[label=$\bullet$]
+            \item Scan des ports ouverts et services associés.
+            \item Détection des versions des services et systèmes d’exploitation.
+            \item Détection des vulnérabilités avec des scripts NSE.
+            \item Analyse avancée avec TCP SYN, UDP et scans furtifs.
+            \item Supporte le multi-threading pour une analyse plus rapide.
+        \end{itemize}
+        
+        \textbf{Commande :}
+        \begin{lstlisting}[language=bash]
+        nmap -sS -p- -A -T4 --script=vuln {target} -oX log.xml
+        \end{lstlisting}
+        
+        \textbf{Explication des options :}
+        \begin{itemize}[label=$\bullet$]
+            \item \texttt{-sS} : Scan SYN furtif (rapide et discret).
+            \item \texttt{-p-} : Scanne tous les ports (1-65535).
+            \item \texttt{-A} : Active la détection OS, la version des services et le scan avec traceroute.
+            \item \texttt{-T4} : Optimise la vitesse du scan.
+            \item \texttt{--script=vuln} : Utilise les scripts NSE pour détecter des vulnérabilités.
+            \item \texttt{-oX log.xml} : Enregistre la sortie au format XML.
+        \end{itemize}
+        
+        \textbf{Résultat attendu :}
+        \begin{itemize}[label=$\bullet$]
+            \item Ports ouverts : \texttt{22/tcp}, \texttt{80/tcp}, \texttt{3306/tcp}.
+            \item Services détectés : OpenSSH, Apache, MySQL.
+            \item Vulnérabilités identifiées.
+        \end{itemize}
+    \item \textbf{SQLMap} \\
+        \textbf{Objectif :} Détecter et exploiter les vulnérabilités d'injection SQL.
+        
+        \textbf{Techniques principales :}
+        \begin{itemize}[label=$\bullet$]
+            \item UNION-based SQL Injection.
+            \item Boolean-based Blind SQL Injection.
+            \item Error-based SQL Injection.
+            \item Stacked Queries SQL Injection.
+            \item Time-based Blind SQL Injection.
+        \end{itemize}
+        
+        \textbf{Commande :}
+        \begin{lstlisting}[language=bash]
+        python {sqlmap_path} -u {self.url} --batch --level={self.setting['sqlmap_level']} --risk={self.setting['sqlmap_risk']} --crawl={self.setting['sqlmap_crawl']} --answers=follow=Y,crawl=Y,sitemap=Y --threads={self.setting['sqlmap_threads']} --technique={self.setting['sqlmap_technique']} --flush-session --output-dir={report_res_path}
+        \end{lstlisting}
+        
+        \textbf{Explication des options :}
+        \begin{itemize}[label=$\bullet$]
+            \item \texttt{-u {url}} : URL cible.
+            \item \texttt{--batch} : Mode non interactif.
+            \item \texttt{--level} : Niveau d’agressivité.
+            \item \texttt{--risk} : Niveau de risque.
+            \item \texttt{--crawl} : Exploration automatique des liens.
+            \item \texttt{--answers} : Réponses automatiques aux prompts.
+            \item \texttt{--threads} : Nombre de threads.
+            \item \texttt{--technique} : Techniques d’injection à utiliser.
+        \end{itemize}
+        
+        \textbf{Résultat attendu :}
+        Rapport complet contenant les types de vulnérabilités SQL détectées et leurs exploitations potentielles.
+    \item \textbf{Nikto} \\
+        \textbf{Objectif :} Scanner les serveurs web pour détecter des vulnérabilités connues.
+        
+        \textbf{Commande :}
+        \begin{lstlisting}[language=bash]
+        perl nikto.pl -h {self.url} -o report_log.json -Format json
+        \end{lstlisting}
+        
+        \textbf{Explication des options :}
+        \begin{itemize}[label=$\bullet$]
+            \item \texttt{-h {self.url}} : Cible à scanner.
+            \item \texttt{-o report\_log.json} : Sortie du rapport au format JSON.
+            \item \texttt{-Format json} : Format du fichier de sortie.
+        \end{itemize}
+        
+        \textbf{Résultat attendu :}
+        Rapport JSON listant les vulnérabilités connues (headers non sécurisés, fichiers sensibles, etc.).
+\end{enumerate}
+
+\vspace{0.3cm}
+{\fontsize{14}{17}\selectfont 
+ \textbf{Conclusion}} \\
+Les outils présentés dans cette annexe ont été essentiels pour automatiser l’analyse de sécurité au sein de notre projet. Leur combinaison permet une couverture plus exhaustive des vecteurs d’attaque courants. Grâce à des scripts adaptés, les analyses sont exécutées automatiquement et les résultats intégrés dans le système de reporting et de suivi des vulnérabilités, facilitant ainsi le travail d'audit tout en améliorant la réactivité face aux menaces identifiées.
+\end{justify}

@@ -1,0 +1,103 @@
+Dans cette section, nous présenterons le Backlog du sprint 2.2, illustré dans le tableau \ref{tab:backlogS22}, en tenant compte des modifications et ajustements apportés depuis le sprint précédent.
+\begin{landscape}
+    \renewcommand{\arraystretch}{1.1}
+    \begin{spacing}{0.98}
+        \begin{longtable}{|p{0.6cm}|p{3cm}|p{5.2cm}|p{1cm}|p{8.2cm}|p{0.6cm}|p{0.6cm}|p{1.2cm}|}
+            \caption{Backlog du sprint 2.2} \label{tab:backlogS22} \\\hline
+            \rowcolor{gray!20}
+            \textbf{\small ID US} & 
+            \multicolumn{1}{c|}{\textbf{\small User Story}} & 
+            \multicolumn{1}{c|}{\textbf{\small Description}} & 
+            \textbf{\small ID tâche}& 
+            \multicolumn{1}{c|}{\textbf{\small Tâches}} & 
+            \multicolumn{1}{c|}{\textbf{\small Priorité}} & 
+            \multicolumn{1}{c|}{\textbf{\small Risques}} & 
+            \textbf{\small Estim-ation(j)} \\\hline          
+            % --- Gestion des analyses complètes (fonctionnels, sécurité, SEO) ------------
+            \rowcolor{blue!20}
+            \multicolumn{8}{|c|}{\textbf{EPIC 7 : Gestion des analyses complètes (fonctionnels, sécurité, SEO)}} \\\hline
+            
+            7.1 & Lancer plusieurs scans en parallèle selon le choix parmi les trois types de tests : fonctionnels, de sécurité et SEO. 
+            & En tant que testeur, je dois pouvoir exécuter simultanément des tests fonctionnels, de sécurité et SEO pour gagner du temps et obtenir une analyse complète et globale.
+            & 7.1.A \newline\vspace{0.5cm}7.1.B 
+            & - Créer un interface et implémenter une logique permettant de choisir un ou plusieurs types de tests à exécuter (fonctionnel, sécurité, SEO) simultanément. \newline
+              - Centraliser les résultats et générer un rapport unifié. \newline
+            & Élevée & Élevée & 2 \\\hline
+            
+            7.2 & Consulter les résultats des différents types d’analyses de manière consolidée.
+            & En tant que testeur, je souhaite consulter de manière centralisée les résultats fonctionnels, de sécurité et SEO afin de mieux comprendre les impacts croisés.
+            & 7.2.A \newline 7.2.B
+            & - Concevoir une interface unifiée pour la visualisation des résultats. \newline
+              - Regrouper les vulnérabilités, erreurs fonctionnelles et recommandations SEO dans une vue consolidée.
+            & Élevée & Moyenne & 2 \\\hline
+            
+            7.3 & Gérer les rapports d’analyse (suppression, export, recherche, relancement).
+            & En tant qu'administrateur, je veux pouvoir rechercher, supprimer, exporter ou relancer un scan en utilisant la configuration d’un rapport existant pour faciliter la gestion des résultats.
+            & 7.3.A \newline 7.3.B \newline 7.3.C
+            & - Ajouter la possibilité de rechercher des rapports par mots-clés, type de test ou date. \newline
+              - Permettre la suppression manuelle ou automatique des rapports. \newline
+              - Intégrer une fonction d’export (PDF/JSON...). \newline
+              - Offrir la possibilité de relancer un scan avec les paramètres d’un ancien rapport.
+            & Moyenne & Moyenne & 2 \\\hline
+           % ----------- Consultation des statistiques --------
+            \rowcolor{blue!20}
+            \multicolumn{8}{|c|}{\textbf{EPIC 8 : Visualisation des statistiques via le tableau de bord}} \\\hline
+            
+            8.1 & Visualiser des statistiques personnalisées des scans via le tableau de bord.
+            & En tant que testeur, je souhaite suivre l'évolution de mes tests à travers un tableau de bord pour faciliter l’analyse.
+            & 8.1.A \newline\vspace{0.5cm} 8.1.B
+            & - Concevoir un tableau de bord interactif permettant d'afficher les résultats des scans. \newline
+              - Représenter les statistiques personnelles sous forme graphique avec des filtres. 
+            & Élevée & Moyenne & 4 \\\hline
+            
+            8.2 & Visualiser les statistiques globales via le tableau de bord administrateur.
+            & En tant qu’administrateur, je souhaite disposer d’un tableau de bord centralisé pour superviser l’activité des utilisateurs, des scans et des autorisations.
+            & 8.2.A \newline\vspace{0.5cm} 8.2.B
+            & - Créer une interface d’administration affichant les statistiques globales : nombre de scans effectués, utilisateurs actifs, statuts des analyses... \newline
+              - Ajouter des filtres dynamiques par période, gravité, type d’analyse, avec des représentations graphiques.
+            & Moyenne & Moyenne & 4 \\\hline
+            
+            % ----------- EPIC 12 -----------------
+            \rowcolor{blue!20}
+            \multicolumn{8}{|c|}{\textbf{EPIC 12 : Gestion des rapports des analyses effectuées}} \\\hline
+
+            12.1 & Consulter tous les rapports générés.
+            & En tant qu’administrateur, je souhaite accéder à tous les rapports générés par les utilisateurs.
+            & 12.1.A \newline 12.1.B
+            & - Créer une interface d’affichage de rapports filtrables par type, date, utilisateur. \newline
+              - Ajouter une fonction de recherche.
+            & Moyenne & Basse & 1 \\\hline
+
+            12.2 & Télécharger et supprimer les rapports.
+            & En tant qu’administrateur, je souhaite pouvoir télécharger ou supprimer les rapports.
+            & 12.2.A \newline 12.2.B
+            & - Ajouter les options de téléchargement dans différents formats (HTML, JSON, PDF...). \newline
+              - Implémenter la suppression sécurisée des rapports obsolètes.
+            & Moyenne & Moyenne & 2 \\\hline
+
+            % ----------- EPIC 13 -----------------
+            \rowcolor{blue!20}
+            \multicolumn{8}{|c|}{\textbf{EPIC 13 : Déploiement de l’application}} \\\hline
+            
+            13.1 & Conteneuriser les composants de l'application.
+            & En tant que développeur, je souhaite conteneuriser les différentes parties de l’application pour en faciliter le déploiement, la portabilité et la maintenance.
+            & 13.1.A \newline\vspace{1cm} 13.1.B
+            & 
+            – Conteneuriser les composants de l’application (PostgreSQL, backend FastAPI, frontend Angular, RabbitMQ) en créant des images Docker personnalisées, et intégrer les outils de sécurité (ZAP, SQLMap, Nuclei) dans des conteneurs dédiés. \newline
+            – Préparer les fichiers Dockerfile avec les configurations pour chaque service.
+            & Élevée & Moyenne & 2 \\\hline
+            
+            13.2 & Orchestrer les conteneurs avec Docker Compose.
+            & En tant que développeur, je souhaite orchestrer le déploiement de tous les services à l’aide de Docker Compose pour assurer une configuration cohérente.
+            & 13.2.A \newline\vspace{1cm} 13.2.B
+            & 
+            – Rédiger un fichier `docker-compose.yml` regroupant tous les services. \newline
+            – Configurer les volumes partagés, les réseaux et les dépendances entre les conteneurs, puis vérifier leur communication et assurer le bon démarrage de l’ensemble.
+            & Moyenne & Moyenne & 3 \\\hline
+            
+            \rowcolor{gray!20}
+			\multicolumn{7}{|c|}{TOTAL} &  22UE \\
+            \hline 
+        \end{longtable}
+    \end{spacing}
+\end{landscape}
